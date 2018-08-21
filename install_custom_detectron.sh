@@ -69,6 +69,12 @@ mkdir -p $INSTALL_DIR && cd $INSTALL_DIR
 git clone --recursive https://github.com/pytorch/pytorch.git && cd pytorch
 git submodule update --init
 mkdir -p build && cd build
+
+
+###### !!!!!!! IMPORTANT
+###### Before running cmake, you'll have to change CMakeLists.txt file to enable USE_NATIVE_ARCH
+###### More here: https://github.com/caffe2/caffe2/issues/1789
+
 cmake ..
 sudo make install -j6
 
